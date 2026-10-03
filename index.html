@@ -1,500 +1,782 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sparsha Lamichhane - Official Site</title>
-  <link rel="shortcut icon" href="./assets/images/Favicon-1.png" type="image/svg+xml">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sparsha Lamichhane — Ruby on Rails developer in Kathmandu</title>
+  <meta name="description" content="Sparsha Lamichhane is a full-stack Ruby on Rails developer in Kathmandu, Nepal: Associate Software Developer at Danphe Software Labs, open-source contributor (good_job, The Odin Project, Ruby for Good), and maker of developer tools.">
+  <meta name="author" content="Sparsha Lamichhane">
+  <link rel="canonical" href="https://sparshalamichhane.com.np/">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="preload" as="image" href="./assets/images/hero-banner.jpg">
-  <link rel="preload" as="image" href="./assets/images/Blog.svg">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F5F3EE" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121110" media="(prefers-color-scheme: dark)">
 
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sparshalamichhane.com.np/">
+  <meta property="og:site_name" content="Sparsha Lamichhane">
+  <meta property="og:title" content="Sparsha Lamichhane — rendered on request">
+  <meta property="og:description" content="Full-stack Rails developer in Kathmandu. I build web apps, fix other people's, and make tools for the people who build them.">
+  <meta property="og:image" content="https://sparshalamichhane.com.np/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Sparsha Lamichhane, rendered on request. A ruby gem next to a Rails server log line.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@sparsha_lc">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+
+  <script data-cfasync="false">
+    /* Runs before first paint: theme, boot overlay, and a failsafe so content never stays hidden. */
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'day' || t === 'night') d.setAttribute('data-theme', t);
+      } catch (e) {}
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var seen = false;
+      try { seen = sessionStorage.getItem('booted') === '1'; } catch (e) {}
+      var boot = !reduce && !seen && !location.hash;
+      if (boot) d.classList.add('is-booting');
+      setTimeout(function () {
+        d.classList.remove('is-booting');
+        d.classList.add('is-ready');
+      }, boot ? 4000 : 2500);
+    })();
+  </script>
+  <script src="js/main.js" defer data-cfasync="false"></script>
+
+  <!--email_off-->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sparsha Lamichhane",
+    "url": "https://sparshalamichhane.com.np/",
+    "image": "https://sparshalamichhane.com.np/img/sparshalc.jpg",
+    "jobTitle": "Associate Software Developer",
+    "worksFor": { "@type": "Organization", "name": "Danphe Software Labs" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Herald College Kathmandu" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Kathmandu", "addressCountry": "NP" },
+    "email": "mailto:imailsparsha@gmail.com",
+    "sameAs": [
+      "https://github.com/sparshalc",
+      "https://www.linkedin.com/in/sparshalc/",
+      "https://x.com/sparsha_lc"
+    ],
+    "knowsAbout": ["Ruby on Rails", "Ruby", "Hotwire", "Turbo", "Stimulus", "JavaScript", "React", "TailwindCSS", "PostgreSQL", "Redis", "Sidekiq", "RSpec", "Docker", "Multi-tenant architecture", "Swift", "macOS", "Claude Code", "Graphic design"]
+  }
+  </script>
+  <!--/email_off-->
 </head>
-
 <body>
-
-  <header class="header" data-header>
-    <div class="container">
-
-      <a href="/" class="logo">
-        <img src="./assets/images/Logo-1.png" width="94" height="54" alt="Sparsha home">
-      </a>
-
-      <nav class="navbar" data-navbar>
-
-        <div class="navbar-top">
-          <a href="/" class="logo">
-            <img src="./assets/images/Logowhite-1.png" width="94" height="54" alt="Sparsha home">
-          </a>
-
-          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
-            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-
-        <ul class="navbar-list">
-
-          <li>
-            <a href="/" class="navbar-link">Home</a>
-          </li>
-
-          <li>
-            <a href="#about" class="navbar-link">About</a>
-          </li>
-
-          <li>
-            <a href="#projects" class="navbar-link">Projects</a>
-          </li>
-
-          <li>
-            <a href="#contact" class="navbar-link">Contact</a>
-          </li>
-
-          <li>
-            <a href="/design.html" class="navbar-link">Designs</a>
-          </li>
-
-        </ul>
-
-        <div class="wrapper">
-          <a href="mailto:imailsparsha@gmail.com" class="contact-link">imailsparsha@gmail.com</a>
-
-          <a href="tel:9844412211" class="contact-link">9844412211</a>
-        </div>
-
-        <ul class="social-list">
-
-          <li>
-            <a href="https://twitter.com/sparsha_lc" class="social-link" target="_blank">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="https://www.facebook.com/lamichhane.sparsha" class="social-link" target="_blank">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/sparshalc/" class="social-link" target="_blank">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.pinterest.com/sparshalc/" class="social-link" target="_blank">
-              <ion-icon name="logo-pinterest"></ion-icon>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/sparshalc_/" class="social-link" target="_blank">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/sparshalc" class="social-link" target="_blank">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
-      </nav>
-      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-      </button>
-
-      <div class="overlay" data-nav-toggler data-overlay></div>
-    </div>
-  </header>
-  <main>
-    <article>
-      <section class="section hero" aria-label="home">
-        <div class="container">
-
-          <figure class="hero-banner">
-            <img src="./assets/images/Sparsha-1.png" width="560" height="540" alt="Sparsha" class="w-100"
-              data-reveal="top">
-          </figure>
-
-          <div class="hero-content">
-
-            <h1 class="h1 hero-title" data-reveal="top" data-reveal-delay="0.5s">
-              I'm a Designer & a Learner.
-            </h1>
-
-            <p class="section-text" data-reveal="top" data-reveal-delay="0.75s">
-              Hello! I'm Sparsha, a Graphic Designer based in Nepal. I’m very passionate
-              about the work that I do.
-            </p>
-
-            <div class="btn-wrapper" data-reveal="top" data-reveal-delay="1s">
-              <a href="#projects" class="btn btn-primary">See My Works</a>
-
-              <a href="/assets/images/CV-1.jpg" class="btn btn-secondary" download="">Download C.V</a>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-      <section class="section about" id="about" aria-label="about">
-        <div class="container">
-
-          <div class="wrapper">
-
-            <div data-reveal="left">
-              <h2 class="h2 section-title">Who is Sparsha?</h2>
-
-              <p class="section-text">
-                Hey there, I’m Sparsha. I’m a student living in Nepal.I am a fan of design, music, and programming. I’m
-                also interested in sports and gaming.Beside that I am flexible, reliable and possess excellent time
-                keeping skills. I am an enthusiastic, self-motivated, reliable, responsible and hard working person. I
-                am a mature team worker and adaptable to all challenging situations. I am able to work well both in a
-                team environment as well as using own initiative.
-              </p>
-            </div>
-
-            <ul class="progress-list" data-reveal="right">
-
-              <li class="progress-item">
-
-                <div class="label-wrapper">
-                  <p>HTML</p>
-
-                  <span class="span">90 %</span>
-                </div>
-
-                <div class="progress">
-                  <div class="progress-fill" style="width: 90%; background-color: #c16f6f"></div>
-                </div>
-
-              </li>
-
-              <li class="progress-item">
-
-                <div class="label-wrapper">
-                  <p>Adobe Photoshop</p>
-
-                  <span class="span">80 %</span>
-                </div>
-
-                <div class="progress">
-                  <div class="progress-fill" style="width: 80%; background-color: #8caeec"></div>
-                </div>
-
-              </li>
-
-              <li class="progress-item">
-
-                <div class="label-wrapper">
-                  <p>Ruby</p>
-
-                  <span class="span">55 %</span>
-                </div>
-
-                <div class="progress">
-                  <div class="progress-fill" style="width: 55%; background-color: #981236"></div>
-                </div>
-
-              </li>
-
-              <li class="progress-item">
-
-                <div class="label-wrapper">
-                  <p>Javascript</p>
-
-                  <span class="span">30 %</span>
-                </div>
-
-                <div class="progress">
-                  <div class="progress-fill" style="width: 30%; background-color: #cddf56"></div>
-                </div>
-
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="grid-list">
-
-            <li data-reveal="bottom">
-              <div class="about-card">
-
-                <div class="card-icon">
-                  <img src="./assets/images/icon-1.svg" width="52" height="52" loading="lazy" alt="web design icon">
-                </div>
-
-                <h3 class="h4 card-title">Graphic Design</h3>
-
-              </div>
-            </li>
-
-            <li data-reveal="bottom" data-reveal-delay="0.25s">
-              <div class="about-card">
-
-                <div class="card-icon">
-                  <img src="./assets/images/icon-2.svg" width="52" height="52" loading="lazy" alt="mobile design icon"
-                    style="rotate: 90deg;">
-                </div>
-
-                <h3 class="h4 card-title">Web Development</h3>
-
-
-              </div>
-            </li>
-
-            <li data-reveal="bottom" data-reveal-delay="0.5s">
-              <div class="about-card">
-
-                <div class="card-icon">
-                  <img src="./assets/images/icon-3.svg" width="52" height="52" loading="lazy"
-                    alt="web development icon">
-                </div>
-
-                <h3 class="h4 card-title">Gaming</h3>
-
-
-              </div>
-            </li>
-
-            <li data-reveal="bottom" data-reveal-delay="0.75s">
-              <div class="about-card">
-
-                <div class="card-icon">
-                  <img src="./assets/images/icon-4.svg" width="52" height="52" loading="lazy" alt="web seo icon">
-                </div>
-
-                <h3 class="h4 card-title">Cricket</h3>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-      </section>
-      <section class="section project" id="projects" aria-labelledby="project-label">
-        <div class="container">
-
-          <div class="title-wrapper" data-reveal="top">
-
-            <div>
-              <h2 class="h2 section-title" id="project-label">Latest Projects</h2>
-
-              <p class="section-text">
-                Check out some of my latest projects with creative ideas.
-              </p>
-            </div>
-
-            <a href="https://github.com/sparshalc" class="btn btn-secondary" target="_blank">See All Projects</a>
-
-          </div>
-
-          <ul class="grid-list">
-
-            <li>
-              <div class="project-card project-card-1" style="background-color: #f1f5fd">
-
-                <div class="card-content" data-reveal="left">
-
-                  <p class="card-tag" style="color: #2382f6">Web App</p>
-
-                  <h3 class="h3 card-title">Pinfinity</h3>
-
-                  <p class="card-text">
-
-                    Pinfinity is a Turbo-powered Rails app that elevates the Pinterest experience. Enjoy real-time
-                    messaging, notifications, likes, and comments. Connect with others through follows, share your
-                    favorite pins, and explore a world of visual inspiration. It's the go-to platform for dynamic,
-                    creative connections.
-                  </p>
-
-                  <a href="https://github.com/sparshalc/Pinfinity" class="btn-text" style="color: #2382f6"
-                    target="_blank">
-                    <span class="span">See Project</span>
-
-                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                  </a>
-
-                </div>
-
-                <figure class="card-banner" data-reveal="right">
-                  <img src="./assets/images/Web.png" width="1050" height="870" loading="lazy" alt="Web Design"
-                    class="w-100" style="scale: 1.8;">
-                </figure>
-
-              </div>
-            </li>
-            <li>
-              <div class="project-card project-card-2" style="background-color: #f1f5fd">
-
-                <div class="card-content" data-reveal="right">
-
-                  <p class=" card-tag" style="color: #3f78e0">Web Design</p>
-
-                  <h3 class="h3 card-title">GlowCart</h3>
-
-                  <p class="card-text">
-                    GlowCart is an innovative e-commerce web application built using Ruby on Rails. The web app
-                    seamlessly integrates with Arduino, allowing it to send signals to the Arduino board whenever a
-                    product is added to the cart.
-                  </p>
-
-                  <a href="https://github.com/sparshalc/GlowCart" class="btn-text" style="color: #3f78e0"
-                    target="_blank">
-                    <span class="span">See Project</span>
-
-                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                  </a>
-
-                </div>
-
-                <figure class="card-banner" data-reveal="left">
-                  <img src="./assets/images/project-2.png" width="850" height="870" loading="lazy" alt="Web Design"
-                    class="w-100" style="scale: 1.1;">
-                </figure>
-
-              </div>
-
-
-            </li>
-
-
-          </ul>
-          <li style="margin-top: 30px;">
-            <div class="project-card project-card-1" style="background-color: #f1f5fd">
-
-              <div class="card-content" data-reveal="left">
-
-                <p class="card-tag" style="color: #2382f6">Web App</p>
-
-                <h3 class="h3 card-title">wordSmith</h3>
-
-                <p class="card-text">
-                  WordSmith is a blog application built on Ruby on Rails that enables users to publish and read blogs.
-                </p>
-
-                <a href="https://github.com/sparshalc/wordSmith-rails" class="btn-text" style="color: #2382f6"
-                  target="_blank">
-                  <span class="span">See Project</span>
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                </a>
-
-              </div>
-
-              <figure class="card-banner" data-reveal="right">
-                <img src="./assets/images/project-4.png" width="1050" height="870" loading="lazy" alt="Web Design"
-                  class="w-100" style="scale: 1.2;">
-              </figure>
-
-            </div>
-          </li>
-
-        </div>
-      </section>
-      <section class="section contact" id="contact" aria-label="contact">
-        <div class="container">
-
-          <div class="contact-card">
-
-            <div class="contact-content" data-reveal="left">
-
-              <div class="card-icon">
-                <img src="./assets/images/Image-1.png" width="44" height="44" loading="lazy" alt="envelop icon">
-              </div>
-
-              <h2 class="h2 section-title">If you like what you see, let's work together.</h2>
-
-              <p class="section-text">
-                I bring rapid solutions to make the life of my clients easier. Have any questions? Reach out to me from
-                this contact form and I will get back to you shortly.
-              </p>
-
-            </div>
-
-            <form action="https://formspree.io/f/xnqyrbgp" method="POST" class="contact-form" data-reveal="right">
-
-              <div class="input-wrapper">
-                <input type="text" name="name" placeholder="Name *" required class="input-field" autocomplete="off">
-
-                <input type="email" name="email" placeholder="abc@gmail.com *" required class="input-field"
-                  autocomplete="off">
-              </div>
-
-              <textarea name="message" placeholder="Message *" required class="input-field"
-                autocomplete="off"></textarea>
-
-              <button type="submit" class="btn btn-secondary">Send message</button>
-
-            </form>
-
-          </div>
-
-        </div>
-      </section>
-
-    </article>
-  </main>
-  <footer class="footer">
-    <div class="container">
-
-      <p class="copyright">
-        © 2023 sparshalc. All rights reserved.
-      </p>
-
-      <ul class="social-list">
-
-        <li>
-          <a href="https://twitter.com/sparsha_lc" class="social-link" target="_blank">
-            <ion-icon name="logo-twitter"></ion-icon>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://www.facebook.com/lamichhane.sparsha" class="social-link" target="_blank">
-            <ion-icon name="logo-facebook"></ion-icon>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://www.linkedin.com/in/sparshalc/" class="social-link" target="_blank">
-            <ion-icon name="logo-linkedin"></ion-icon>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://www.pinterest.com/sparshalc/" class="social-link" target="_blank">
-            <ion-icon name="logo-pinterest"></ion-icon>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://www.instagram.com/sparshalc_/" class="social-link" target="_blank">
-            <ion-icon name="logo-instagram"></ion-icon>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://github.com/sparshalc" class="social-link" target="_blank">
-            <ion-icon name="logo-github"></ion-icon>
-          </a>
-        </li>
-
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Boot overlay: shown once per session (see head script). Decorative. -->
+  <div class="boot" aria-hidden="true">
+    <pre class="boot__screen"><code></code></pre>
+    <p class="boot__hint">press any key to skip</p>
+  </div>
+
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Sparsha Lamichhane, back to top">
+      <svg class="gem-sm" viewBox="0 0 100 92" aria-hidden="true" focusable="false"><polygon points="25,10 75,10 90,30 50,86 10,30"/><path d="M10 30H90M25 10L36.7 30L50 10L63.3 30L75 10M36.7 30L50 86L63.3 30"/></svg>
+      <span>sparsha</span><span class="wordmark__ext">.rb</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#story"><span class="verb">GET</span>/story</a></li>
+        <li><a href="#work"><span class="verb">GET</span>/work</a></li>
+        <li><a href="#oss"><span class="verb">GET</span>/oss</a></li>
+        <li><a href="#offline"><span class="verb">GET</span>/offline</a></li>
+        <li><a href="#hello"><span class="verb">POST</span>/hello</a></li>
       </ul>
+    </nav>
 
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+      <span class="theme-toggle__dot" aria-hidden="true"></span>
+      <span class="theme-toggle__key" aria-hidden="true">env</span>
+      <span class="theme-toggle__val" data-theme-label>day</span>
+    </button>
+
+    <button class="menu-toggle" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="routes-sheet">routes</button>
+  </header>
+
+  <!-- Mobile / small-screen navigation -->
+  <dialog class="sheet" id="routes-sheet" aria-labelledby="sheet-title">
+    <div class="sheet__inner">
+      <div class="sheet__bar">
+        <p class="sheet__title" id="sheet-title">$ bin/rails routes</p>
+        <button class="sheet__close" type="button" data-sheet-close aria-label="Close routes">esc</button>
+      </div>
+      <ul class="sheet__list">
+        <li><a href="#top"><span class="verb">GET</span><span class="path">/</span><span class="note">you are here</span></a></li>
+        <li><a href="#story"><span class="verb">GET</span><span class="path">/story</span><span class="note">where I'm from, how I got here</span></a></li>
+        <li><a href="#work"><span class="verb">GET</span><span class="path">/work</span><span class="note">things I've built</span></a></li>
+        <li><a href="#oss"><span class="verb">GET</span><span class="path">/oss</span><span class="note">merged into other people's code</span></a></li>
+        <li><a href="#offline"><span class="verb">GET</span><span class="path">/offline</span><span class="note">music, games, design</span></a></li>
+        <li><a href="#hello"><span class="verb">POST</span><span class="path">/hello</span><span class="note">say hi</span></a></li>
+      </ul>
+    </div>
+  </dialog>
+
+  <!-- The request's path through the stack. Decorative; the nav above is the accessible equivalent. -->
+  <div class="rail" aria-hidden="true">
+    <div class="rail__track"><div class="rail__fill"></div></div>
+    <div class="rail__nodes"></div>
+    <div class="rail__gem">
+      <svg class="gem-sm" viewBox="0 0 100 92" focusable="false"><polygon points="25,10 75,10 90,30 50,86 10,30"/><path d="M10 30H90M25 10L36.7 30L50 10L63.3 30L75 10M36.7 30L50 86L63.3 30"/></svg>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ 01 · REQUEST ============ -->
+    <section class="hero" id="top" data-layer="request" aria-labelledby="hero-title">
+      <div class="wrap hero__grid">
+        <p class="hero__req">
+          <span class="t-r">Started</span> GET "/sparsha" for you<span class="hero__at" hidden> at <time data-np-stamp></time></span>
+        </p>
+
+        <div class="hero__gem" aria-hidden="true">
+          <div class="hero__gem-art">
+            <svg class="gem-big" viewBox="0 0 100 92" focusable="false">
+              <polygon class="facet" points="10,30 25,10 36.7,30"/>
+              <polygon class="facet" points="25,10 50,10 36.7,30"/>
+              <polygon class="facet" points="36.7,30 50,10 63.3,30"/>
+              <polygon class="facet" points="50,10 75,10 63.3,30"/>
+              <polygon class="facet" points="63.3,30 75,10 90,30"/>
+              <polygon class="facet" points="10,30 36.7,30 50,86"/>
+              <polygon class="facet" points="36.7,30 63.3,30 50,86"/>
+              <polygon class="facet" points="63.3,30 90,30 50,86"/>
+            </svg>
+            <span class="hero__gem-shadow"></span>
+          </div>
+          <p class="hero__gem-note"># the request. watch it travel.</p>
+        </div>
+
+        <div class="hero__main">
+          <h1 class="hero__title" id="hero-title">
+            <span class="mask"><span>Sparsha Lamichhane,</span></span>
+            <span class="mask"><span>rendered <code class="hero__code">on&nbsp;request<span class="caret" aria-hidden="true"></span></code></span></span>
+          </h1>
+          <p class="hero__lede">Full-stack Rails developer in Kathmandu. I build web apps, fix other people's, and make tools for the people who build them.</p>
+          <div class="hero__actions">
+            <a class="btn btn--solid" href="#work" data-log="Redirected to {b:/work}">view records <span aria-hidden="true">↓</span></a>
+            <a class="btn btn--line" href="#hello" data-log="Routing to {b:messages#create}"><span class="btn__verb">POST</span> /hello</a>
+          </div>
+        </div>
+
+        <dl class="hero__meta">
+          <div><dt># currently</dt><dd>Associate Software Developer, Danphe Software Labs</dd></div>
+          <div><dt># based in</dt><dd>Kathmandu, Nepal</dd></div>
+          <div><dt># local time</dt><dd><time data-np-clock hidden></time> <span class="muted">NPT · UTC+05:45</span></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ 02 · ROUTES ============ -->
+    <section class="section routes" id="routes" data-layer="routes" aria-labelledby="routes-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="file-tab">config/routes.rb</p>
+          <p class="sec-layer">02 · routing</p>
+          <h2 class="sec-title" id="routes-title"><span class="mask"><span>Where this request can&nbsp;go.</span></span></h2>
+          <p class="sec-cmd reveal">$ bin/rails routes</p>
+        </header>
+
+        <nav aria-label="Page sections">
+          <div class="route route--head" aria-hidden="true">
+            <span>Prefix</span><span>Verb</span><span>URI Pattern</span><span>Controller#Action</span><span>What's there</span>
+          </div>
+          <ol class="routes__list">
+            <li class="reveal" style="--i:0"><a class="route" href="#top"><span class="route__prefix">root</span><span class="route__verb">GET</span><span class="route__uri">/</span><span class="route__action">humans#show</span><span class="route__note">You are here.</span></a></li>
+            <li class="reveal" style="--i:1"><a class="route" href="#story"><span class="route__prefix">story</span><span class="route__verb">GET</span><span class="route__uri">/story(.:format)</span><span class="route__action">humans#story</span><span class="route__note">Where I'm from, how I got here.</span></a></li>
+            <li class="reveal" style="--i:2"><a class="route" href="#work"><span class="route__prefix">work</span><span class="route__verb">GET</span><span class="route__uri">/work(.:format)</span><span class="route__action">projects#index</span><span class="route__note">Things I've built.</span></a></li>
+            <li class="reveal" style="--i:3"><a class="route" href="#oss"><span class="route__prefix">oss</span><span class="route__verb">GET</span><span class="route__uri">/oss(.:format)</span><span class="route__action">contributions#index</span><span class="route__note">15 merged PRs in other people's repos.</span></a></li>
+            <li class="reveal" style="--i:4"><a class="route" href="#offline"><span class="route__prefix">offline</span><span class="route__verb">GET</span><span class="route__uri">/offline(.:format)</span><span class="route__action">humans#offline</span><span class="route__note">Music, games, design, side quests.</span></a></li>
+            <li class="reveal" style="--i:5"><a class="route" href="#hello"><span class="route__prefix">hello</span><span class="route__verb route__verb--post">POST</span><span class="route__uri">/hello(.:format)</span><span class="route__action">messages#create</span><span class="route__note">Say hi.</span></a></li>
+          </ol>
+        </nav>
+        <p class="routes__foot reveal"># 6 routes. no 404s as long as you stay on the path.</p>
+      </div>
+    </section>
+
+    <!-- ============ 03 · CONTROLLER ============ -->
+    <section class="section story" id="story" data-layer="controller" aria-labelledby="story-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="file-tab">app/controllers/humans_controller.rb</p>
+          <p class="sec-layer">03 · controller</p>
+          <h2 class="sec-title" id="story-title"><span class="mask"><span>Before the action, a&nbsp;few <code>callbacks</code>.</span></span></h2>
+        </header>
+
+        <div class="story__grid">
+          <div class="story__text">
+            <figure class="code-panel reveal">
+              <figcaption class="code-panel__tab">humans_controller.rb</figcaption>
+<pre class="code"><code><span class="k">class</span> <span class="c">HumansController</span> &lt; <span class="c">ApplicationController</span>
+  <a class="cb" href="#cb-design" data-cb="cb-design"><span class="m">before_action</span> <span class="sym">:start_with_design</span></a>
+  <a class="cb" href="#cb-rails" data-cb="cb-rails"><span class="m">before_action</span> <span class="sym">:find_rails</span></a>
+  <a class="cb" href="#cb-study" data-cb="cb-study"><span class="m">before_action</span> <span class="sym">:study_computing</span></a>
+  <a class="cb" href="#cb-danphe" data-cb="cb-danphe"><span class="m">before_action</span> <span class="sym">:join_danphe</span></a>
+  <a class="cb" href="#cb-ship" data-cb="cb-ship"><span class="m">before_action</span> <span class="sym">:ship_side_projects</span></a>
+  <a class="cb" href="#cb-oss" data-cb="cb-oss"><span class="m">before_action</span> <span class="sym">:fix_other_peoples_code</span></a>
+  <a class="cb" href="#cb-tools" data-cb="cb-tools"><span class="m">before_action</span> <span class="sym">:build_tools_for_developers</span></a>
+
+  <span class="k">def</span> <span class="f">show</span>
+    <span class="iv">@human</span> = <span class="c">Human</span>.find_by!(<span class="sym">name:</span> <span class="str">"Sparsha"</span>)
+    <span class="cm"># develop, debug and play.</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+            </figure>
+
+            <div class="prose">
+              <p class="reveal">I'm Sparsha, a full-stack developer in Kathmandu who mostly writes Ruby. To me, full-stack means the whole request: the route, the query, the partial, and the small Stimulus controller that makes it feel instant.</p>
+              <p class="reveal">I started out as a graphic designer in 2020 and found Rails in 2022. I learn by building, so that has meant a long tail of Rails apps (blogs, chat rooms, clones of apps everyone uses) and one shop that switches on a real light whenever an order comes in.</p>
+              <p class="reveal">Along the way I started reading other people's code and sending fixes back. Today I'm an Associate Software Developer at Danphe Software Labs, working on multi-tenant SaaS and Rails engines, and I build small tools for developers on the side.</p>
+              <p class="reveal">Off the clock: music, games, and graphic design.</p>
+            </div>
+          </div>
+
+          <figure class="portrait reveal">
+            <picture>
+              <source type="image/webp" srcset="img/sparshalc-640.webp 640w, img/sparshalc-1080.webp 1080w" sizes="(min-width: 960px) 36vw, 100vw">
+              <img src="img/sparshalc-640.jpg" width="640" height="800" loading="lazy" decoding="async" alt="Sparsha outdoors in sunglasses, a black scarf and a rust-coloured sweater under a black hoodie, looking down, with trees behind.">
+            </picture>
+            <figcaption class="portrait__cap"><span class="iv">@human</span> <span class="muted"># =&gt;</span> #&lt;Human name: "Sparsha", location: "Kathmandu", tz: "+05:45"&gt;</figcaption>
+          </figure>
+        </div>
+
+        <ol class="callbacks" aria-label="Timeline">
+          <li class="callback reveal" id="cb-design">
+            <p class="callback__when">2020</p>
+            <div class="callback__body">
+              <h3 class="callback__name">:start_with_design</h3>
+              <p>Graphic designer at MomoChulo and MomoMania in Kathmandu, and later a few months editing video at Sastodeal. Design came first, and it never really left.</p>
+            </div>
+          </li>
+          <li class="callback reveal" id="cb-rails">
+            <p class="callback__when">2022</p>
+            <div class="callback__body">
+              <h3 class="callback__name">:find_rails</h3>
+              <p>Opened a GitHub account in October 2022 and started building with Ruby on Rails.</p>
+            </div>
+          </li>
+          <li class="callback reveal" id="cb-study">
+            <p class="callback__when">2023–26</p>
+            <div class="callback__body">
+              <h3 class="callback__name">:study_computing</h3>
+              <p>BSc (Hons) Computing at Herald College Kathmandu, after +2 in Physical Sciences at Orchid College.</p>
+            </div>
+          </li>
+          <li class="callback reveal" id="cb-danphe">
+            <p class="callback__when">2023–now</p>
+            <div class="callback__body">
+              <h3 class="callback__name">:join_danphe</h3>
+              <p>Joined Danphe Software Labs as an intern in February 2023 and became an Associate Software Developer that September. Since then: a multi-tenant architecture for an enterprise SaaS move, a production Employment Management System turned into a reusable Rails engine, and RESTful APIs and third-party integrations.</p>
+            </div>
+          </li>
+          <li class="callback reveal" id="cb-ship">
+            <p class="callback__when">2023</p>
+            <div class="callback__body">
+              <h3 class="callback__name">:ship_side_projects</h3>
+              <p>A long run of Rails apps: WordSmith, a Threads clone, a Turbo chat room, a LinkedIn-style network, Pinfinity, a Chrome extension, and GlowCart, a shop wired to an Arduino.</p>
+            </div>
+          </li>
+          <li class="callback reveal" id="cb-oss">
+            <p class="callback__when">2023–24</p>
+            <div class="callback__body">
+              <h3 class="callback__name">:fix_other_peoples_code</h3>
+              <p>Merged pull requests into good_job, The Odin Project and Ruby for Good's Homeward Tails, mostly UI polish and quality-of-life features.</p>
+            </div>
+          </li>
+          <li class="callback reveal" id="cb-tools">
+            <p class="callback__when">2025–now</p>
+            <div class="callback__body">
+              <h3 class="callback__name">:build_tools_for_developers</h3>
+              <p>A drag-and-drop page builder, a multi-tenant activity tracker, and Claude Control Center, a macOS cockpit for Claude Code written in Swift and shipped through my own Homebrew tap. Picked up a Claude Code 101 certificate along the way.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 04 · MODEL ============ -->
+    <section class="section work" id="work" data-layer="model" aria-labelledby="work-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="file-tab">app/models/project.rb</p>
+          <p class="sec-layer">04 · model</p>
+          <h2 class="sec-title" id="work-title"><span class="mask"><span>Selected records.</span></span></h2>
+          <p class="sec-cmd reveal">Project.where(featured: <span class="t-r">true</span>).order(year: <span class="t-r">:desc</span>)</p>
+          <p class="sec-lede reveal">Things I've built, from Rails products to a shop that talks to an Arduino.</p>
+        </header>
+
+        <div class="scopes reveal" role="group" aria-label="Filter projects by scope">
+          <span class="scopes__label">Project</span>
+          <button type="button" class="scope" data-scope="all" aria-pressed="true">.all</button>
+          <button type="button" class="scope" data-scope="rails" aria-pressed="false">.rails</button>
+          <button type="button" class="scope" data-scope="hotwire" aria-pressed="false">.hotwire</button>
+          <button type="button" class="scope" data-scope="hardware" aria-pressed="false">.hardware</button>
+          <button type="button" class="scope" data-scope="tools" aria-pressed="false">.tools</button>
+          <span class="scopes__count" data-scope-count aria-hidden="true">18 rows</span>
+        </div>
+        <p class="visually-hidden" aria-live="polite" data-scope-status></p>
+
+        <div class="records">
+          <!-- Record 1 -->
+          <article class="record reveal" data-tags="tools" aria-labelledby="rec-ccc">
+            <div class="record__meta">
+              <span class="record__id">id: 1</span>
+              <span>2026</span>
+              <span class="record__status">macOS 14+</span>
+            </div>
+            <div class="record__body">
+              <h3 class="record__title" id="rec-ccc">Claude Control Center</h3>
+              <p class="record__desc">A macOS cockpit for Claude Code. Watch every tool call, approve risky commands before they run, and track every file change from a Dynamic Island pill or the menu bar. It runs fully on your Mac: a token-authenticated local server, no cloud, no telemetry.</p>
+              <ul class="tags" aria-label="Stack"><li>Swift</li><li>macOS</li><li>Claude Code hooks</li></ul>
+              <p class="record__links">
+                <a href="https://incandescent-torte-0c6e58.netlify.app/" target="_blank" rel="noopener" data-log="Redirected to {b:incandescent-torte-0c6e58.netlify.app}">landing page <span aria-hidden="true">↗</span></a>
+              </p>
+            </div>
+            <figure class="record__cover" data-log="  PreToolUse  Bash {b:git push origin main --force}  risk: {r:high}  {m:→ waiting for approval}">
+              <img src="img/claude-control-center-640.webp" srcset="img/claude-control-center-640.webp 640w, img/claude-control-center-1200.webp 1200w" sizes="(min-width: 960px) 44vw, 100vw" width="1200" height="750" loading="lazy" decoding="async" alt="The Claude Control Center landing page: macOS cockpit for Claude Code, beside a demo window that reads Take control of Claude Code.">
+            </figure>
+          </article>
+
+          <!-- Record 2 -->
+          <article class="record reveal" data-tags="rails" aria-labelledby="rec-pb">
+            <div class="record__meta">
+              <span class="record__id">id: 2</span>
+              <span>2025</span>
+              <span class="record__status">source</span>
+            </div>
+            <div class="record__body">
+              <h3 class="record__title" id="rec-pb">page-builder-rails</h3>
+              <p class="record__desc">Drag, drop, and define. A Rails page builder that stores reusable content components, assembles them into structured pages, and handles media with Active Storage.</p>
+              <ul class="tags" aria-label="Stack"><li>Rails</li><li>Active Storage</li><li>JavaScript</li></ul>
+              <p class="record__links">
+                <a href="https://github.com/sparshalc/page-builder-rails" target="_blank" rel="noopener" data-log="Redirected to {b:github.com/sparshalc/page-builder-rails}">source <span aria-hidden="true">↗</span></a>
+              </p>
+            </div>
+            <figure class="record__cover">
+              <img src="img/page-builder-640.webp" srcset="img/page-builder-640.webp 640w, img/page-builder-1200.webp 1200w" sizes="(min-width: 960px) 44vw, 100vw" width="1200" height="750" loading="lazy" decoding="async" alt="The page-builder-rails editor: a component list on the left, a hero section being edited in the middle, and image settings on the right.">
+            </figure>
+          </article>
+
+          <!-- Record 3 -->
+          <article class="record reveal" data-tags="rails" aria-labelledby="rec-at">
+            <div class="record__meta">
+              <span class="record__id">id: 3</span>
+              <span>2025</span>
+              <span class="record__status">source</span>
+            </div>
+            <div class="record__body">
+              <h3 class="record__title" id="rec-at">activity_trackable</h3>
+              <p class="record__desc">A multi-tenant Rails app that tracks user activity, manages company teams and runs peer recognition, with analytics on top. Tenants are isolated with acts_as_tenant, auth is Devise, and access is role-based.</p>
+              <ul class="tags" aria-label="Stack"><li>Rails</li><li>multi-tenant</li><li>Devise</li></ul>
+              <p class="record__links">
+                <a href="https://github.com/sparshalc/activity_trackable" target="_blank" rel="noopener" data-log="Redirected to {b:github.com/sparshalc/activity_trackable}">source <span aria-hidden="true">↗</span></a>
+              </p>
+            </div>
+            <figure class="record__cover">
+              <img src="img/activity-trackable-640.webp" srcset="img/activity-trackable-640.webp 640w, img/activity-trackable-1200.webp 1200w" sizes="(min-width: 960px) 44vw, 100vw" width="1200" height="750" loading="lazy" decoding="async" alt="The activity_trackable dashboard showing activity, user and recognition counts above a recent-activity feed.">
+            </figure>
+          </article>
+
+          <!-- Record 4 -->
+          <article class="record record--glowcart reveal" data-tags="rails hardware" aria-labelledby="rec-gc">
+            <div class="record__meta">
+              <span class="record__id">id: 4</span>
+              <span>2023</span>
+              <span class="record__status">source</span>
+            </div>
+            <div class="record__body">
+              <h3 class="record__title" id="rec-gc">GlowCart</h3>
+              <p class="record__desc">An online shop wired to an Arduino. Product info shows up on a 16×2 LCD, and an indicator light switches on when an order comes in. Hover or tap the cover to place one.</p>
+              <ul class="tags" aria-label="Stack"><li>Rails</li><li>Arduino</li><li>C++</li></ul>
+              <p class="record__links">
+                <a href="https://github.com/sparshalc/GlowCart" target="_blank" rel="noopener" data-log="Redirected to {b:github.com/sparshalc/GlowCart}">source <span aria-hidden="true">↗</span></a>
+              </p>
+            </div>
+            <figure class="record__cover">
+              <img src="img/glowcart-640.webp" srcset="img/glowcart-640.webp 640w, img/glowcart-1200.webp 1200w" sizes="(min-width: 960px) 44vw, 100vw" width="1200" height="750" loading="lazy" decoding="async" alt="The GlowCart landing page: Enlightening shopping experience with Arduino integration.">
+              <div class="lcd" aria-hidden="true">
+                <div class="lcd__screen">
+                  <span class="lcd__row">----GlowCart----</span>
+                  <span class="lcd__row lcd__row--idle">----Welcome-----</span>
+                  <span class="lcd__row lcd__row--order">-new order :) --</span>
+                </div>
+                <span class="lcd__led"></span>
+              </div>
+            </figure>
+          </article>
+
+          <!-- Record 5 -->
+          <article class="record reveal" data-tags="rails" aria-labelledby="rec-vr">
+            <div class="record__meta">
+              <span class="record__id">id: 5</span>
+              <span>2024</span>
+              <span class="record__status">★ 4</span>
+            </div>
+            <div class="record__body">
+              <h3 class="record__title" id="rec-vr">VroomRental</h3>
+              <p class="record__desc">A car-rental platform: browse the fleet, book a car, manage your account. Four stars on GitHub, which in side-project currency is a lot.</p>
+              <ul class="tags" aria-label="Stack"><li>Rails</li><li>PostgreSQL</li><li>JavaScript</li></ul>
+              <p class="record__links">
+                <a href="https://github.com/sparshalc/vroom_car_rental" target="_blank" rel="noopener" data-log="Redirected to {b:github.com/sparshalc/vroom_car_rental}">source <span aria-hidden="true">↗</span></a>
+              </p>
+            </div>
+            <figure class="record__cover">
+              <img src="img/vroom-640.webp" srcset="img/vroom-640.webp 640w, img/vroom-1000.webp 1000w" sizes="(min-width: 960px) 44vw, 100vw" width="1000" height="625" loading="lazy" decoding="async" alt="The VROOM car rental landing page: Driving dreams, one rental at a time.">
+            </figure>
+          </article>
+
+          <!-- Record 6 -->
+          <article class="record reveal" data-tags="rails hotwire" aria-labelledby="rec-ws">
+            <div class="record__meta">
+              <span class="record__id">id: 6</span>
+              <span>2023</span>
+              <span class="record__status">source</span>
+            </div>
+            <div class="record__body">
+              <h3 class="record__title" id="rec-ws">WordSmith</h3>
+              <p class="record__desc">A blogging platform where people publish posts, read each other and follow the writers they like.</p>
+              <ul class="tags" aria-label="Stack"><li>Rails</li><li>Hotwire</li><li>PostgreSQL</li></ul>
+              <p class="record__links">
+                <a href="https://github.com/sparshalc/WordSmithRails" target="_blank" rel="noopener" data-log="Redirected to {b:github.com/sparshalc/WordSmithRails}">source <span aria-hidden="true">↗</span></a>
+              </p>
+            </div>
+            <figure class="record__cover">
+              <img src="img/wordsmith-640.webp" srcset="img/wordsmith-640.webp 640w, img/wordsmith-1200.webp 1200w" sizes="(min-width: 960px) 44vw, 100vw" width="1200" height="750" loading="lazy" decoding="async" alt="WordSmith screens: a blog post, the Stay Creative home page, and a reading list.">
+            </figure>
+          </article>
+        </div>
+
+        <div class="more reveal">
+          <p class="more__query">Project.where.not(featured: <span class="t-r">true</span>) <span class="muted" data-more-count># =&gt; 12 rows</span></p>
+          <ul class="more__list">
+            <li data-tags="rails"><a href="https://github.com/sparshalc/Threads" target="_blank" rel="noopener"><span class="more__name">Threads</span><span class="more__desc">A Threads clone: post, reply, follow profiles.</span><span class="more__year">2023</span></a></li>
+            <li data-tags="rails hotwire"><a href="https://github.com/sparshalc/ChatRoomRails-Turbo" target="_blank" rel="noopener"><span class="more__name">ChatRoomRails-Turbo</span><span class="more__desc">Real-time chat room on Rails 7, Turbo and Stimulus.</span><span class="more__year">2023</span></a></li>
+            <li data-tags="rails hotwire"><a href="https://github.com/sparshalc/DevelopersCommunity" target="_blank" rel="noopener"><span class="more__name">DevelopersCommunity</span><span class="more__desc">A LinkedIn-style network built with Turbo Streams and Stimulus.</span><span class="more__year">2023</span></a></li>
+            <li data-tags="rails hotwire"><a href="https://github.com/sparshalc/QuoteEditorRails-Turbo" target="_blank" rel="noopener"><span class="more__name">QuoteEditorRails-Turbo</span><span class="more__desc">The hotrails.dev quote editor, built along the tutorial.</span><span class="more__year">2023</span></a></li>
+            <li data-tags="rails hotwire"><a href="https://github.com/sparshalc/todo.danphesl" target="_blank" rel="noopener"><span class="more__name">todo.danphesl</span><span class="more__desc">A to-do list with Turbo Frames and Stimulus.</span><span class="more__year">2023</span></a></li>
+            <li data-tags="rails"><a href="https://github.com/sparshalc/SocialSphere" target="_blank" rel="noopener"><span class="more__name">SocialSphere</span><span class="more__desc">A social feed: share moments, follow friends, find what's trending.</span><span class="more__year">2023</span></a></li>
+            <li data-tags="rails"><a href="https://github.com/sparshalc/Pinfinity" target="_blank" rel="noopener"><span class="more__name">Pinfinity</span><span class="more__desc">A board for collecting and sharing ideas.</span><span class="more__year">2023</span></a></li>
+            <li data-tags="rails"><a href="https://github.com/sparshalc/RailsReactCRUD" target="_blank" rel="noopener"><span class="more__name">RailsReactCRUD</span><span class="more__desc">A React front end on a Rails API.</span><span class="more__year">2023</span></a></li>
+            <li data-tags="rails tools"><a href="https://github.com/sparshalc/DiscordBot" target="_blank" rel="noopener"><span class="more__name">DiscordBot</span><span class="more__desc">Posts new articles to Discord, powered by Rails and discordrb.</span><span class="more__year">2023</span></a></li>
+            <li data-tags="rails tools"><a href="https://github.com/sparshalc/slack_notifications" target="_blank" rel="noopener"><span class="more__name">slack_notifications</span><span class="more__desc">Send Slack messages from a Rails server.</span><span class="more__year">2024</span></a></li>
+            <li data-tags="tools"><a href="https://github.com/sparshalc/MemoSite" target="_blank" rel="noopener"><span class="more__name">MemoSite</span><span class="more__desc">A Chrome extension for saving the sites you'll want again.</span><span class="more__year">2023</span></a></li>
+            <li data-tags="tools"><a href="https://github.com/sparshalc/DarazScrapper" target="_blank" rel="noopener"><span class="more__name">DarazScrapper</span><span class="more__desc">A Ruby and Selenium scraper for dynamic sites.</span><span class="more__year">2023</span></a></li>
+            <li class="more__empty" hidden><span># =&gt; [] &nbsp;nothing else here. GlowCart is the only one with wires, for now.</span></li>
+          </ul>
+          <p class="more__foot"><a href="https://github.com/sparshalc?tab=repositories" target="_blank" rel="noopener" data-log="Redirected to {b:github.com/sparshalc?tab=repositories}">All 30 public repos on GitHub <span aria-hidden="true">↗</span></a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 05 · ASSOCIATIONS ============ -->
+    <section class="section oss" id="oss" data-layer="has_many" aria-labelledby="oss-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="file-tab">app/models/human.rb</p>
+          <p class="sec-layer">05 · association</p>
+          <h2 class="sec-title" id="oss-title"><span class="mask"><span>Other people's code, merged.</span></span></h2>
+          <p class="sec-cmd reveal"><span class="t-r">has_many</span> :contributions, -&gt; { merged }</p>
+          <p class="sec-lede reveal">Small, real fixes in projects other people depend on. Mostly UI polish and quality-of-life features.</p>
+        </header>
+
+        <p class="oss__stats reveal"><span class="t-g">=&gt;</span> 15 merged <span class="muted">·</span> 7 repos <span class="muted">·</span> Apr 2023 → Jul 2026</p>
+
+        <div class="repos">
+          <section class="repo reveal" aria-labelledby="repo-gj">
+            <div class="repo__head">
+              <h3 class="repo__name" id="repo-gj"><a href="https://github.com/bensheldon/good_job" target="_blank" rel="noopener" data-log="Redirected to {b:github.com/bensheldon/good_job}">bensheldon/good_job</a></h3>
+              <p class="repo__desc">Multithreaded, Postgres-based Active Job backend for Ruby on Rails.</p>
+              <p class="repo__count">3 merged</p>
+            </div>
+            <ol class="prs">
+              <li><a href="https://github.com/bensheldon/good_job/pull/1210" target="_blank" rel="noopener" data-log="GET {b:good_job/pull/1210} → {g:merged}"><span class="pr__num">#1210</span><span class="pr__title">Fix: interacting with an input field should pause the live poll</span><time class="pr__date" datetime="2024-01-19">Jan 2024</time></a></li>
+              <li><a href="https://github.com/bensheldon/good_job/pull/1206" target="_blank" rel="noopener" data-log="GET {b:good_job/pull/1206} → {g:merged}"><span class="pr__num">#1206</span><span class="pr__title">Add environment label to navbar</span><time class="pr__date" datetime="2024-01-20">Jan 2024</time></a></li>
+              <li><a href="https://github.com/bensheldon/good_job/pull/1204" target="_blank" rel="noopener" data-log="GET {b:good_job/pull/1204} → {g:merged}"><span class="pr__num">#1204</span><span class="pr__title">Add "updated at" info in secondary top navbar</span><time class="pr__date" datetime="2024-01-03">Jan 2024</time></a></li>
+            </ol>
+          </section>
+
+          <section class="repo reveal" aria-labelledby="repo-ht">
+            <div class="repo__head">
+              <h3 class="repo__name" id="repo-ht"><a href="https://github.com/rubyforgood/homeward-tails" target="_blank" rel="noopener" data-log="Redirected to {b:github.com/rubyforgood/homeward-tails}">rubyforgood/homeward-tails</a></h3>
+              <p class="repo__desc">Ruby for Good's app that helps rescue organisations connect pets with adopters and fosters.</p>
+              <p class="repo__count">5 merged</p>
+            </div>
+            <ol class="prs">
+              <li><a href="https://github.com/rubyforgood/homeward-tails/pull/761" target="_blank" rel="noopener" data-log="GET {b:homeward-tails/pull/761} → {g:merged}"><span class="pr__num">#761</span><span class="pr__title">Refactor: use the full_name attribute for user full names</span><time class="pr__date" datetime="2024-05-30">May 2024</time></a></li>
+              <li><a href="https://github.com/rubyforgood/homeward-tails/pull/470" target="_blank" rel="noopener" data-log="GET {b:homeward-tails/pull/470} → {g:merged}"><span class="pr__num">#470</span><span class="pr__title">Add checkbox to show/hide completed tasks</span><time class="pr__date" datetime="2024-02-20">Feb 2024</time></a></li>
+              <li><a href="https://github.com/rubyforgood/homeward-tails/pull/460" target="_blank" rel="noopener" data-log="GET {b:homeward-tails/pull/460} → {g:merged}"><span class="pr__num">#460</span><span class="pr__title">Shade each task's background by its status</span><time class="pr__date" datetime="2024-02-14">Feb 2024</time></a></li>
+              <li><a href="https://github.com/rubyforgood/homeward-tails/pull/458" target="_blank" rel="noopener" data-log="GET {b:homeward-tails/pull/458} → {g:merged}"><span class="pr__num">#458</span><span class="pr__title">Change design and position of the new-task button</span><time class="pr__date" datetime="2024-02-01">Feb 2024</time></a></li>
+              <li><a href="https://github.com/rubyforgood/homeward-tails/pull/439" target="_blank" rel="noopener" data-log="GET {b:homeward-tails/pull/439} → {g:merged}"><span class="pr__num">#439</span><span class="pr__title">Remove redundant pet name</span><time class="pr__date" datetime="2024-01-12">Jan 2024</time></a></li>
+            </ol>
+          </section>
+
+          <section class="repo reveal" aria-labelledby="repo-top">
+            <div class="repo__head">
+              <h3 class="repo__name" id="repo-top"><a href="https://github.com/TheOdinProject/theodinproject" target="_blank" rel="noopener" data-log="Redirected to {b:github.com/TheOdinProject/theodinproject}">TheOdinProject/theodinproject</a></h3>
+              <p class="repo__desc">The free, open-source web development curriculum.</p>
+              <p class="repo__count">3 merged</p>
+            </div>
+            <ol class="prs">
+              <li><a href="https://github.com/TheOdinProject/theodinproject/pull/4345" target="_blank" rel="noopener" data-log="GET {b:theodinproject/pull/4345} → {g:merged}"><span class="pr__num">#4345</span><span class="pr__title">Show the number of projects in each section</span><time class="pr__date" datetime="2024-01-25">Jan 2024</time></a></li>
+              <li><a href="https://github.com/TheOdinProject/theodinproject/pull/4316" target="_blank" rel="noopener" data-log="GET {b:theodinproject/pull/4316} → {g:merged}"><span class="pr__num">#4316</span><span class="pr__title">Fix: correct text size in the hamburger menu for dark/light mode</span><time class="pr__date" datetime="2024-01-07">Jan 2024</time></a></li>
+              <li><a href="https://github.com/TheOdinProject/theodinproject/pull/4311" target="_blank" rel="noopener" data-log="GET {b:theodinproject/pull/4311} → {g:merged}"><span class="pr__num">#4311</span><span class="pr__title">Fix broken home page banner</span><time class="pr__date" datetime="2024-01-07">Jan 2024</time></a></li>
+            </ol>
+          </section>
+
+          <section class="repo repo--misc reveal" aria-labelledby="repo-misc">
+            <div class="repo__head">
+              <h3 class="repo__name" id="repo-misc">elsewhere</h3>
+              <p class="repo__desc">Friends' and community projects.</p>
+              <p class="repo__count">4 merged</p>
+            </div>
+            <ol class="prs">
+              <li><a href="https://github.com/AadiAcharya/aaathiti_aagaman/pull/1" target="_blank" rel="noopener" data-log="GET {b:aaathiti_aagaman/pull/1} → {g:merged}"><span class="pr__num">aaathiti_aagaman#1</span><span class="pr__title">Redesign homepage hero and lay a design-system foundation</span><time class="pr__date" datetime="2026-07-04">Jul 2026</time></a></li>
+              <li><a href="https://github.com/ayush-43/wastemanagementandclimateconference/pull/1" target="_blank" rel="noopener" data-log="GET {b:wastemanagementandclimateconference/pull/1} → {g:merged}"><span class="pr__num">climate-conference#1</span><span class="pr__title">Fix navbar</span><time class="pr__date" datetime="2024-05-16">May 2024</time></a></li>
+              <li><a href="https://github.com/Pawan-gautam011/JS-Projects/pull/1" target="_blank" rel="noopener" data-log="GET {b:JS-Projects/pull/1} → {g:merged}"><span class="pr__num">JS-Projects#1</span><span class="pr__title">Add design and logic to handle validations</span><time class="pr__date" datetime="2023-12-12">Dec 2023</time></a></li>
+              <li><a href="https://github.com/Pawan-gautam011/CALCULATOR/pull/1" target="_blank" rel="noopener" data-log="GET {b:CALCULATOR/pull/1} → {g:merged}"><span class="pr__num">CALCULATOR#1</span><span class="pr__title">Bug fixed</span><time class="pr__date" datetime="2023-04-05">Apr 2023</time></a></li>
+            </ol>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 06 · VIEW ============ -->
+    <section class="section offline" id="offline" data-layer="view" aria-labelledby="offline-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="file-tab">app/views/humans/_offline.html.erb</p>
+          <p class="sec-layer">06 · view</p>
+          <h2 class="sec-title" id="offline-title"><span class="mask"><span>Rendered outside office&nbsp;hours.</span></span></h2>
+          <p class="sec-cmd reveal">&lt;%= render partial: <span class="t-r">"hobby"</span>, collection: @human.hobbies %&gt;</p>
+          <p class="sec-lede reveal">What runs after the laptop closes. Hover (or tap) a tile to peek. Click to play.</p>
+          <div class="sound reveal">
+            <button class="sound__toggle" type="button" data-sound-toggle aria-pressed="false">
+              <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span data-sound-label>sound: off</span>
+            </button>
+            <p class="sound__note">30-second previews from Apple Music</p>
+          </div>
+        </header>
+
+        <ul class="objects">
+          <li class="obj reveal" style="--i:0" data-peek="music" data-partial="_music.html.erb">
+            <svg class="obj__art" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <path d="M26 70V60a34 34 0 0 1 68 0v10"/>
+              <rect x="18" y="64" width="18" height="32" rx="8"/>
+              <rect x="84" y="64" width="18" height="32" rx="8"/>
+              <circle class="acc-fill" cx="54" cy="86" r="5"/>
+              <path class="acc" d="M59 86V64l11 4"/>
+            </svg>
+            <p class="obj__file">_music.html.erb</p>
+            <h3 class="obj__name">Music</h3>
+            <p class="obj__quip"># Russ and Emiway on repeat. old songs, sometimes.</p>
+            <p class="obj__now" hidden><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><span data-now-title></span> <a data-now-link href="https://music.apple.com/" target="_blank" rel="noopener">Apple Music <span aria-hidden="true">↗</span></a></p>
+            <button class="obj__btn" type="button" aria-label="Music: play 30-second previews of Russ, Emiway Bantai and Bachchu Kailash"></button>
+          </li>
+          <li class="obj reveal" style="--i:1" data-peek="games" data-partial="_games.html.erb">
+            <svg class="obj__art" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <path d="M38 44h44c12 0 20 8 23 18l6 20c2 8-7 14-14 8L86 78H34L23 90c-7 6-16 0-14-8l6-20c3-10 11-18 23-18Z"/>
+              <path d="M34 56v14M27 63h14"/>
+              <circle class="acc-fill" cx="82" cy="58" r="3.4"/>
+              <circle class="acc-fill" cx="90" cy="66" r="3.4"/>
+              <path d="M60 44c0-10 10-12 10-22"/>
+            </svg>
+            <p class="obj__file">_games.html.erb</p>
+            <h3 class="obj__name">Games</h3>
+            <p class="obj__quip"># winner winner, chicken dinner.</p>
+            <p class="obj__now" hidden><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><span data-now-title></span> <a data-now-link href="https://music.apple.com/" target="_blank" rel="noopener">Apple Music <span aria-hidden="true">↗</span></a></p>
+            <button class="obj__btn" type="button" aria-label="Games: PUBG Mobile, play a 30-second preview of the PUBG theme"></button>
+          </li>
+          <li class="obj reveal" style="--i:2" data-peek="design" data-partial="_design.html.erb">
+            <svg class="obj__art" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <path class="thin" d="M20 90L40 32M100 30L80 98"/>
+              <path class="acc" d="M20 90C40 32 80 98 100 30"/>
+              <rect x="15" y="85" width="10" height="10"/>
+              <rect x="95" y="25" width="10" height="10"/>
+              <circle cx="40" cy="32" r="3.5"/>
+              <circle cx="80" cy="98" r="3.5"/>
+            </svg>
+            <p class="obj__file">_design.html.erb</p>
+            <h3 class="obj__name">Graphic design</h3>
+            <p class="obj__quip"># posters and photo composites.</p>
+            <button class="obj__btn" type="button" aria-label="Graphic design: show my posters and photo composites"></button>
+          </li>
+          <li class="obj reveal" style="--i:3" data-peek="vim" data-partial="_vim.html.erb">
+            <svg class="obj__art" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <rect x="14" y="24" width="92" height="72" rx="6"/>
+              <path d="M14 38h92"/>
+              <path d="M26 56l8 6-8 6"/>
+              <rect class="acc-fill obj__cursor" x="40" y="55" width="9" height="15"/>
+              <path class="thin" d="M26 82h44"/>
+            </svg>
+            <p class="obj__file">_vim.html.erb</p>
+            <h3 class="obj__name">Vim</h3>
+            <p class="obj__quip"># :wq is muscle memory. try pressing <kbd>:</kbd></p>
+            <button class="obj__btn" type="button" aria-label="Vim: replay a :wq, with keyboard sounds when sound is on"></button>
+          </li>
+        </ul>
+        <p class="visually-hidden" aria-live="polite" data-peek-status></p>
+      </div>
+
+      <!-- Hover cards. Images live in img/; audio is streamed from Apple Music's official 30-second previews. -->
+      <script type="application/json" id="peek-data">
+      {
+        "music": {
+          "items": [
+            {
+              "title": "Russ — 3:15 (Breathe)",
+              "images": ["img/artists/russ-480.webp", "img/artists/russ-2-480.webp"],
+              "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/3d/9e/ff/3d9eff64-cef8-ed99-f6c8-64d087110b01/mzaf_687195173955792224.plus.aac.p.m4a",
+              "link": "https://music.apple.com/us/album/3-15-breathe/1566946307?i=1566946316"
+            },
+            {
+              "title": "Emiway Bantai — DREAMS",
+              "images": ["img/artists/emiway-480.webp"],
+              "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ab/87/92/ab879289-09ea-219d-713c-55b126fe19ad/mzaf_11145698947864083388.plus.aac.p.m4a",
+              "link": "https://music.apple.com/us/album/dreams/1894492773?i=1894492777"
+            },
+            {
+              "kicker": "and sometimes, the old songs",
+              "title": "Bachchu Kailash — Timile Ta Hoina Timra",
+              "images": ["img/artists/bachchu-kailash-480.webp"],
+              "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/83/39/26/8339265e-4902-5885-1dcd-13c4cae3db43/mzaf_9870404311891751627.plus.aac.p.m4a",
+              "link": "https://music.apple.com/us/album/timile-ta-hoina-timra/1680494425?i=1680494433"
+            }
+          ]
+        },
+        "games": {
+          "items": [
+            {
+              "title": "PUBG Mobile",
+              "track": "PUBG — The First Survivor",
+              "images": ["img/games/pubg-mobile-480.webp"],
+              "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/32/d1/7e/32d17ed5-a7d6-e595-890c-be39837efcca/mzaf_6793533581825507626.plus.aac.p.m4a",
+              "link": "https://music.apple.com/us/album/the-first-survivor-early-access-main-title/1830435533?i=1830435536"
+            }
+          ]
+        },
+        "design": {
+          "items": [
+            {
+              "kicker": "posters & composites",
+              "title": "Posters & composites",
+              "images": [
+                { "src": "img/design/tu-480.webp", "title": "Slow Kingdom · photo composite" },
+                { "src": "img/design/cr-480.webp", "title": "CR7 · sports poster" }
+              ]
+            }
+          ]
+        },
+        "vim": {
+          "items": [
+            { "title": "nvim human.rb", "vim": true }
+          ]
+        }
+      }
+      </script>
+    </section>
+
+    <!-- ============ 07 · RESPONSE ============ -->
+    <section class="section hello" id="hello" data-layer="response" aria-labelledby="hello-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="file-tab">app/controllers/messages_controller.rb</p>
+          <p class="sec-layer">07 · response</p>
+          <p class="hello__status reveal"><span class="t-g">Completed 200 OK</span> in <span data-elapsed>a while</span><span class="muted"> (Views: 1 human | ActiveRecord: 15 merged PRs | Allocations: your attention)</span></p>
+          <h2 class="sec-title hello__title" id="hello-title"><span class="mask"><span>Your turn.</span></span> <span class="mask"><span>Send a request.</span></span></h2>
+        </header>
+
+        <div class="hello__grid">
+          <div class="hello__direct">
+            <p class="hello__lede reveal">Got a question, an idea, or a Rails app that needs another pair of hands? Write to me. Email is the fastest way.</p>
+
+            <!--email_off-->
+            <div class="email reveal">
+              <a class="email__link" href="mailto:imailsparsha@gmail.com" data-log="ActionMailer: composing mail to {b:imailsparsha@gmail.com}">imailsparsha@gmail.com</a>
+              <button class="email__copy" type="button" data-copy="imailsparsha@gmail.com">copy</button>
+            </div>
+            <!--/email_off-->
+
+            <ul class="links reveal">
+              <li><a href="https://github.com/sparshalc" target="_blank" rel="noopener me" data-log="Redirected to {b:github.com/sparshalc}"><span class="links__k">github</span><span class="links__v">/sparshalc</span><span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://www.linkedin.com/in/sparshalc/" target="_blank" rel="noopener me" data-log="Redirected to {b:linkedin.com/in/sparshalc}"><span class="links__k">linkedin</span><span class="links__v">/in/sparshalc <span class="links__c"># my resume, for now</span></span><span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://x.com/sparsha_lc" target="_blank" rel="noopener me" data-log="Redirected to {b:x.com/sparsha_lc}"><span class="links__k">x</span><span class="links__v">/sparsha_lc</span><span aria-hidden="true">↗</span></a></li>
+            </ul>
+          </div>
+
+          <form class="composer reveal" data-composer novalidate>
+            <p class="composer__tab"><span class="t-r">POST</span> /hello</p>
+            <div class="composer__code">
+              <p class="composer__line"><span class="c">Message</span>.create!(</p>
+              <p class="composer__line composer__line--field">
+                <label for="msg-from"><span class="sym">from:</span></label>
+                <span class="str">"</span><input id="msg-from" name="from" type="text" autocomplete="name" placeholder="your name" maxlength="80"><span class="str">",</span>
+              </p>
+              <p class="composer__line composer__line--field composer__line--body">
+                <label for="msg-body"><span class="sym">body:</span></label>
+                <span class="str">"</span><textarea id="msg-body" name="body" rows="4" placeholder="hi sparsha, …" required aria-describedby="msg-error"></textarea><span class="str">"</span>
+              </p>
+              <p class="composer__line">)</p>
+            </div>
+            <p class="composer__error" id="msg-error" aria-live="polite"></p>
+            <div class="composer__foot">
+              <button class="btn btn--solid" type="submit">send <span aria-hidden="true">⏎</span></button>
+              <p class="composer__note">Opens your mail app. Nothing is sent from this page.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__grid">
+      <p class="site-footer__motto"><span class="t-g">=&gt;</span> develop, debug and play.</p>
+      <p>© 2026 Sparsha Lamichhane · Kathmandu, Nepal</p>
+      <p class="muted">Hand-written HTML, CSS and JS. No framework, no trackers.</p>
+      <p class="site-footer__vim">
+        <span class="muted">This page speaks vim:</span> <kbd>j</kbd> <kbd>k</kbd> <kbd>gg</kbd> <kbd>G</kbd> <kbd>:</kbd>
+        <button type="button" class="vim-toggle" data-vim-toggle aria-pressed="true">vim keys: on</button>
+      </p>
+      <p><a class="site-footer__top" href="#top" data-log="Redirected to {b:/}">back to top <span aria-hidden="true">↑</span></a></p>
     </div>
   </footer>
-  <script src="./assets/js/script.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
 
+  <!-- Server log (decorative narration). -->
+  <aside class="log" aria-label="Server log" data-state="mini" hidden>
+    <div class="log__bar">
+      <span class="log__title">log/production.log</span>
+      <button class="log__btn" type="button" data-log-follow aria-pressed="true" title="Follow new lines">tail -f</button>
+      <button class="log__btn" type="button" data-log-size aria-expanded="false" aria-controls="log-body" title="Expand log">expand</button>
+      <button class="log__btn" type="button" data-log-close aria-label="Hide server log">×</button>
+    </div>
+    <div class="log__body" id="log-body" role="log" aria-live="off"></div>
+  </aside>
+  <button class="log-tab" type="button" data-log-open hidden>log</button>
+
+  <!-- Vim command line -->
+  <div class="cmdline" hidden>
+    <label class="cmdline__prompt" for="cmd-input">:</label>
+    <input class="cmdline__input" id="cmd-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command (try help)">
+    <p class="cmdline__msg" aria-live="polite"></p>
+  </div>
+</body>
 </html>

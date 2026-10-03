@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>No route matches · Sparsha Lamichhane</title>
+  <meta name="robots" content="noindex">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
+  <script data-cfasync="false">
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'day' || t === 'night') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
+  <style>
+    .nf { display: flex; min-height: 100vh; min-height: 100svh; align-items: center; padding-block: 4rem; }
+    .nf__error { margin: 0 0 1.25rem; font: 600 0.8125rem/1.4 var(--font-mono); color: var(--ruby); }
+    .nf__title { max-width: none; margin: 0; }
+    .nf__title code { overflow-wrap: anywhere; }
+    .nf__lede { max-width: 44ch; margin: 1.5rem 0 2rem; font-size: 1.125rem; color: var(--ink-2); }
+    .nf .code-panel { max-width: 46rem; margin-bottom: 2rem; }
+    .nf .code { white-space: pre; }
+    .nf .code a { color: var(--ink); }
+    .nf .code a:hover { color: var(--ruby); }
+  </style>
+</head>
+<body>
+  <main class="nf">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="file-tab">ActionController::RoutingError</p>
+        <p class="nf__error">404 Not Found</p>
+        <h1 class="sec-title nf__title">No route matches <code>[GET] "<span data-path>/this-page</span>"</code></h1>
+        <p class="nf__lede">Rails would show you a stack trace here. I'll show you the way back instead.</p>
+      </div>
+      <figure class="code-panel">
+        <figcaption class="code-panel__tab">Routes match in priority from top to bottom</figcaption>
+<pre class="code"><code><span class="muted">   root</span> <span class="str">GET </span> <a href="/">/</a>                  humans#show
+<span class="muted">  story</span> <span class="str">GET </span> <a href="/#story">/story(.:format)</a>   humans#story
+<span class="muted">   work</span> <span class="str">GET </span> <a href="/#work">/work(.:format)</a>    projects#index
+<span class="muted">    oss</span> <span class="str">GET </span> <a href="/#oss">/oss(.:format)</a>     contributions#index
+<span class="muted">offline</span> <span class="str">GET </span> <a href="/#offline">/offline(.:format)</a> humans#offline
+<span class="muted">  hello</span> <span class="sym">POST</span> <a href="/#hello">/hello(.:format)</a>   messages#create</code></pre>
+      </figure>
+      <a class="btn btn--solid" href="/">GET / <span aria-hidden="true">→</span></a>
+    </div>
+  </main>
+  <script>
+    document.querySelector('[data-path]').textContent = location.pathname;
+  </script>
+</body>
+</html>
