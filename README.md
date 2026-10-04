@@ -25,7 +25,7 @@ css/style.css       tokens → base → chrome → sections → motion states
 js/main.js          progressive enhancement: log, rail, boot, filters, vim mode, composer
 fonts/              self-hosted Bricolage Grotesque + JetBrains Mono (latin, OFL)
 img/                portrait + project covers (webp, 640/1200 widths)
-                    sparshalc.jpg is the portrait master; sparshalc-640/1080 are 4:5 crops of it
+                    sparshalc.jpg is the portrait (CSS crops it to 4:5)
 og.png              1200×630 social preview
 favicon.svg/.ico, apple-touch-icon.png, icon-512.png, site.webmanifest
 robots.txt, sitemap.xml
